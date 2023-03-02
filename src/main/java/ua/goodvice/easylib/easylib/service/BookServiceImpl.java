@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ua.goodvice.easylib.easylib.dao.BookRepository;
 import ua.goodvice.easylib.easylib.entity.Book;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +22,8 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveBook(Book book) {
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        book.setDate_added(dateFormatter.format(new Date()));
         bookRepository.save(book);
     }
 

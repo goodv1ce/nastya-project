@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.sql.Date;
-
 @Entity
 @Table(name = "books")
 public class Book {
@@ -17,19 +15,14 @@ public class Book {
     private String type;
     @Column(name = "name")
     private String name;
+    @Column(name = "author")
+    private String author;
     @Column(name = "book_condition")
     private String book_condition;
     @Column(name = "date_added")
-    private Date date_added;
+    private String date_added;
 
     public Book() {
-    }
-
-    public Book(String type, String name, String book_condition, Date date_added) {
-        this.type = type;
-        this.name = name;
-        this.book_condition = book_condition;
-        this.date_added = date_added;
     }
 
     public int getId() {
@@ -60,15 +53,23 @@ public class Book {
         return book_condition;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public void setBook_condition(String book_condition) {
         this.book_condition = book_condition;
     }
 
-    public Date getDate_added() {
+    public String getDate_added() {
         return date_added;
     }
 
-    public void setDate_added(Date date_added) {
+    public void setDate_added(String date_added) {
         this.date_added = date_added;
     }
 }
