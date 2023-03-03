@@ -11,8 +11,8 @@
     <groupId>ua.goodvice.easylib</groupId>
     <artifactId>easylib</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>library-management-system</name>
-    <description>library-management-system</description>
+    <name>library-management-system-server</name>
+    <description>library-management-system-server</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -38,6 +38,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
     </dependencies>
