@@ -1,15 +1,40 @@
 package ua.goodvice.easylib.easylib.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ua.goodvice.easylib.easylib.dao.BookRepository;
 import ua.goodvice.easylib.easylib.entity.Book;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
-public interface BookService {
-    public List<Book> getAllBooks();
-
-    public void saveBook(Book book);
-
-    public Book getBook(int id);
-
-    public void deleteBook(int id);
+@Service
+public class BookService {
+    @Autowired
+    private BookRepository bookRepository;
+    
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
+    }
+    
+    public void saveBook(Book book) {
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        book.setDate_added(dateFormatter.format(new Date()));
+        bookRepository.save(book);
+    }
+    
+    public Book getBook(int id) {
+        Book book = null;
+        Optional<Book> optional = bookRepository.findById(id);
+        if (optional.isPresent()) {
+            book = optional.get();
+        }
+        return book;
+    }
+    
+    public void deleteBook(int id) {
+        bookRepository.deleteById(id);
+    }
 }
