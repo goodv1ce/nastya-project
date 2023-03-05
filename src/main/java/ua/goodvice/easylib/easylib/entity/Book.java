@@ -4,9 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "books")
+@Data
 public class Book {
     @Id
     @Column(name = "id")
@@ -21,55 +23,4 @@ public class Book {
     private String book_condition;
     @Column(name = "date_added")
     private String date_added;
-
-    public Book() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBook_condition() {
-        return book_condition;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setBook_condition(String book_condition) {
-        this.book_condition = book_condition;
-    }
-
-    public String getDate_added() {
-        return date_added;
-    }
-
-    public void setDate_added(String date_added) {
-        this.date_added = date_added;
-    }
 }
