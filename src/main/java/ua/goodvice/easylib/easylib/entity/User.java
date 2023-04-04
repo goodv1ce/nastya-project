@@ -2,10 +2,14 @@ package ua.goodvice.easylib.easylib.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Set;
-
+/**
+ * POJO class which represents a user
+ * Lombok @Data annotation was used. This annotation set up setters and getters for every field
+ *
+ * @author goodvice
+ * @version 1.0
+ */
 @Entity
 @Table(name = "users")
 @Data

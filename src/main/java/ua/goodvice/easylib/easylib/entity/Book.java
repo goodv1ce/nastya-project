@@ -6,6 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+/**
+ * POJO class which represents a book
+ * Lombok @Data annotation was used. This annotation set up setters and getters for every field
+ *
+ * @author goodvice
+ * @version 1.0
+ */
 @Entity
 @Table(name = "books")
 @Data
@@ -23,4 +30,6 @@ public class Book {
     private String book_condition;
     @Column(name = "date_added")
     private String date_added;
+    @Column(name = "genre")
+    private String genre;
 }

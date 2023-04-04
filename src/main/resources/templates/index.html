@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Library</title>
+    <link rel="stylesheet" th:href="@{styles/index-style.css}"/>
+</head>
+<body>
+<div class="operations-buttons">
+    <h2 class="welcome-label">Welcome to Library</h2>
+</div>
+<div class="first-row-buttons-container">
+    <div class="first-row-buttons">
+        <button class="first-row-btn" onclick="location.href='/catalogue'" type="button">Open Catalogue</button>
+        <button class="first-row-btn">View Issued Books</button>
+        <button class="first-row-btn" onclick="location.href='/donate'" type="button">Donate Book</button>
+        <button class="first-row-btn">Return Book</button>
+    </div>
+</div>
+</body>
+</html>
