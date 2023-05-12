@@ -79,7 +79,6 @@ public class RESTController {
      *
      * @param id book id that is needed to be deleted
      * @return String object with information about successful deleting book with some id
-     * @return String object with information about successful deleting book with some id
      */
     @DeleteMapping("/books/{id}")
     public String deleteBook(@PathVariable int id) {
