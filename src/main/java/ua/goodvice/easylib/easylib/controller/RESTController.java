@@ -1,6 +1,6 @@
 package ua.goodvice.easylib.easylib.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ua.goodvice.easylib.easylib.entity.Book;
 import ua.goodvice.easylib.easylib.service.BookService;
@@ -10,20 +10,19 @@ import java.util.List;
 /**
  * REST Controller
  * Contains methods that interact with database via entity classes
- * Mostly of the functionality is in the service classes
  *
  * @author goodvice
  * @version 1.0
  */
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class RESTController {
     /**
      * Autowired book service class.
      * Contains main functionality of interacting with database
      */
-    @Autowired
-    private BookService bookService;
+    private final BookService bookService;
 
     /**
      * Returns all books that are in the database
@@ -83,6 +82,6 @@ public class RESTController {
     @DeleteMapping("/books/{id}")
     public String deleteBook(@PathVariable int id) {
         bookService.deleteBook(id);
-        return "Book with ID = " + id + " was delated!";
+        return "Book with ID = " + id + " was deleted!";
     }
 }

@@ -1,10 +1,9 @@
 package ua.goodvice.easylib.easylib.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * POJO class which represents a book
@@ -16,8 +15,11 @@ import lombok.Data;
 @Entity
 @Table(name = "books")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     @Column(name = "type")
@@ -26,7 +28,7 @@ public class Book {
     private String name;
     @Column(name = "author")
     private String author;
-    @Column(name = "condition")
+    @Column(name = "book_condition")
     private String book_condition;
     @Column(name = "date_added")
     private String date_added;

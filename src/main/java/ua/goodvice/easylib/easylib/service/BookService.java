@@ -1,6 +1,6 @@
 package ua.goodvice.easylib.easylib.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.goodvice.easylib.easylib.dao.BookRepository;
 import ua.goodvice.easylib.easylib.entity.Book;
@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class BookService {
-    @Autowired
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
     
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
