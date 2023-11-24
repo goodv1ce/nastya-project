@@ -11,7 +11,7 @@ import java.util.List;
  * REST Controller
  * Contains methods that interact with database via entity classes
  *
- * @author goodvice
+ * @author kviatkivska
  * @version 1.0
  */
 @RestController

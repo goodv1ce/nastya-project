@@ -20,7 +20,7 @@ import java.util.List;
  * @version 1.0
  */
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @Data
 @Builder
 @NoArgsConstructor
@@ -28,15 +28,17 @@ import java.util.List;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer id;
-    @Column(name = "firstname")
+    @Column(name = "user_firstname")
     private String firstname;
-    @Column(name = "lastname")
+    @Column(name = "user_lastname")
     private String lastname;
-    @Column(name = "email")
+    @Column(name = "user_email")
     private String email;
-    @Column(name = "password")
+    @Column(name = "user_password")
     private String password;
+    @Column(name = "user_role")
     @Enumerated(EnumType.STRING)
     private Role role;
 

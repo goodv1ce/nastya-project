@@ -13,25 +13,25 @@ import lombok.NoArgsConstructor;
  * @version 1.0
  */
 @Entity
-@Table(name = "books")
+@Table(name = "book")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "book_id")
     private int id;
-    @Column(name = "type")
+    @Column(name = "book_type")
     private String type;
-    @Column(name = "name")
+    @Column(name = "book_name")
     private String name;
-    @Column(name = "author")
+    @Column(name = "book_author")
     private String author;
     @Column(name = "book_condition")
-    private String book_condition;
-    @Column(name = "date_added")
+    private String condition;
+    @Column(name = "book_add_date")
     private String date_added;
-    @Column(name = "genre")
+    @Column(name = "book_genre")
     private String genre;
 }
